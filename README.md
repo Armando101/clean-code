@@ -76,3 +76,83 @@ const tax = 0.15;
 const category = 'T-Shirts';
 const birthDate = new Date('Agust 29, 1997');
 ```
+
+
+# Nombres según el tipo de dato
+
+## Arrays
+```js
+const fruit = ['apple', 'bannana', 'raspberry']
+```
+
+```js
+const fruitList = ['apple', 'bannana', 'raspberry']
+```
+
+```js
+const fruits = ['apple', 'bannana', 'raspberry']
+```
+
+```js
+const fruitNames = ['apple', 'bannana', 'raspberry']
+```
+
+```js
+const fruitNameList = ['apple', 'bannana', 'raspberry']
+```
+
+## Booleans
+
+Mal
+```js
+const open = true;
+const write = true;
+const fruit = true;  // No tiene sentido
+const active = true;
+const noValues = true; // No incluir negaciones
+const notEmpty = true;
+```
+
+Bien
+```js
+const isOpen = true;
+const canWrite = true;
+const hasFruit = true;
+const isActive = true;
+const hasValues = true;
+const isEmpty = false;
+```
+
+## Numbers
+
+Mal
+```js
+const fruits = 3;
+const cars = 10;
+```
+
+Bien
+```js
+const maxFruits = 3;
+const minCars = 10;
+
+const totalFruits = 3;
+```
+
+## Funciones
+
+Mal
+```js
+createUserIfNotExistsInDatabase(); // Evitar explicar la lógica en el nombre
+updateUserIfNotEmpty();  // Evitemos negaciones en el nombre
+sendEmailIfFieldsValid();
+```
+
+Bien
+```js
+createUser();
+updateUser();
+sendEmail();
+```
+
+
