@@ -162,6 +162,13 @@ sendEmail();
 - No deben ser muy genéricos
 - Usar UpperCamelCase
 
+### Preguntas para determinar si es un buen nombre
+- ¿Qué exactamente hace la clase?
+- ¿Cómo exactamente esta clase realiza cierta tarea?
+- ¿Hay algo específico sobre su ubicación?
+  
+más pabras !== mejor nombre
+
 Mal
 ```js
 class Manager {};
