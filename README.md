@@ -155,4 +155,19 @@ updateUser();
 sendEmail();
 ```
 
+## Clases
 
+- El nombre es lo más importante de la clase
+- Formados por un sustantivo o frases de sustantivo
+- No deben ser muy genéricos
+- Usar UpperCamelCase
+
+Mal
+```js
+class Manager {};
+class Data {};
+class Info {};
+class Individual {};
+class Processor {};
+class SpecialMonsterView {};
+```
