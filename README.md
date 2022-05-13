@@ -59,3 +59,20 @@ Ya sea el cliente, el proveedor con recursos o el propio desarrollador dedicando
 > "Programar es el arte de decirle a otro humano lo que quieres que la computadora haga"
 > -Donald Knuth
 
+# Nombres Pronuciables y expresivos
+
+Mal
+```js
+const n = 53;
+const tx = 0.15;
+const cat = 'T-Shirts';
+const ddmmyyyy = new Date('Agust 29, 1997');
+```
+
+Bien
+```js
+const numberOfUnits = 53;
+const tax = 0.15;
+const category = 'T-Shirts';
+const birthDate = new Date('Agust 29, 1997');
+```
