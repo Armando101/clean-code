@@ -229,3 +229,10 @@ function sendEmail({toWhom, from, body, subject, apiKey}: SendEmailOption): bool
   
 }
 ```
+### Recomendaciones
+- Simplicidad es fundamental
+- Funciones de tamaño reducido
+- Funciones de una sola línea sin causar complejidad
+- Menos de 20 líneas de código
+- Evitar el uso de "else"
+- Priorizar el uso de la condicional ternaria
