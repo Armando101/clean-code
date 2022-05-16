@@ -178,3 +178,54 @@ class Individual {};
 class Processor {};
 class SpecialMonsterView {};
 ```
+
+# Funciones
+> "Sabemos que estamos desarrollando código limpio cuando cada función hace exactamente lo que su nombre indica"
+> -Ward Cunnigham
+
+Bien
+```ts
+function sendEmail(toWhom: string): boolean {
+  // Verificar correo
+  // Construir el cuerpo o mensaje
+  // Enviar correo
+  // Si todo sale bien
+  return true  
+}
+```
+
+Mal
+```ts
+function sendEmail(): boolean {
+  // Verificar si el usuario existe
+  // Revisar contraseña
+  // Crear usuario en base de datos
+  // Si todo sale bien
+  return true  
+}
+```
+
+Se recomienda limitar a 3 parámestros posicionales en nuestras funciones
+
+No muy bien
+```ts
+function sendEmail(toWhom: string, from: string, body: string, subject: string, apiKey: string): boolean {
+
+}
+```
+
+Mejor
+```ts
+
+interface SendEmailOption {
+  toWhom: string;
+  from: string;
+  body: string;
+  subject: string;
+  apiKey: string;
+}
+
+function sendEmail({toWhom, from, body, subject, apiKey}: SendEmailOption): boolean {
+  
+}
+```
