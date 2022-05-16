@@ -236,3 +236,65 @@ function sendEmail({toWhom, from, body, subject, apiKey}: SendEmailOption): bool
 - Menos de 20 líneas de código
 - Evitar el uso de "else"
 - Priorizar el uso de la condicional ternaria
+
+Mal
+```ts
+const getPayAmount = ({
+  isDead = false,
+  isSeparated = true,
+  isRetired = false,
+}) => {
+  let result;
+  if (isDead) {
+    result = 1500;
+  } else {
+    if (isSeparated) {
+      result = 2500;
+    } else {
+      if (isRetired) {
+        result = 3000;
+      } else {
+        result = 4000;
+      }
+    }
+  }
+
+  return result;
+  };
+```
+
+Mejor
+```ts
+const getPayAmount = ({
+  isDead = false,
+  isSeparated = true,
+  isRetired = false,
+}): number => {
+  if (isDead) {
+    return 1500;
+  }
+  if (isSeparated) {
+    return 2500;
+  }
+  if (isRetired) {
+    return 3000;
+  }
+  return 4000;
+};
+```
+
+Mucho mejor
+```ts
+const getPayAmount = ({
+  isDead = false,
+  isSeparated = true,
+  isRetired = false,
+}): number => {
+  if (isDead) return 1500;
+
+  if (isSeparated) return 2500;
+
+  return isRetired ? 3000 : 4000;
+};
+```
+
