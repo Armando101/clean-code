@@ -334,3 +334,23 @@ Si vamos a escribir un comentario, escibamos el ¿Por qué? no el ¿Qué? ni el 
 # Uniformidad en el proyecto
 Problemas similares, soluciones similares
 Este principio aplica tanto al código como a la organización de nuestras carpetas en el proyecto
+
+# Stupid
+6 Code Smells que debemos evitar
+- **S**ingleton: patrón singleton
+- **T**ight Coupling: alto acoplamiento
+- **U**nestability: código no probable (unit test)
+- **P**remature optimization: optimizaciones prematuras
+- **I**ndescriptive Naming: nombres poco descriptivos
+- **D**uplication: duplicidad de código, no aplicar el principio DRY
+
+## Singleton
+### Pros
+- Garantiza una única instancia de la clase a lo largo de toda la aplicación
+
+### Const
+- Vive en el contexto global
+- Puede ser modificado por cualquiera y en cualquier momento
+- No es rastreable
+- Difícil de testear debido a su ubicación
+  
