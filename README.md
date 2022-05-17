@@ -353,4 +353,34 @@ Este principio aplica tanto al código como a la organización de nuestras carpe
 - Puede ser modificado por cualquiera y en cualquier momento
 - No es rastreable
 - Difícil de testear debido a su ubicación
+
+## Alto acoplamiento y baja cohesión
+Lo ideal es tener bajo acomplamiento y buena cohesión.
+## Acoplamiento
+- Se refiere a cuán relacionadas o dependientes son dos clases o módulos entre sí.
+- **Bajo acoplamiento**: cambiar algo importante en una clase no debería afectar a la otra.
+- **Alto acoplamiento**: dificulta el cambio y el mantenimiento de su código, dado que las clases están muy unidas, hacer un cambio podría requerir una renovación completa del sistema.
   
+> Un buen diseño de software tiene alta cohesión y bajo acoplamiento
+
+### Contras de un alto acoplamiento
+- Un cambio en un módulo por lo general provoca un efecto dominó de los cambios en otros módulos
+- El ensamblaje de módulos puede requerir más esfuerzo y/o tiempo debido a la mayor dependencia ente módulos
+- Un módulo en particular puede ser más difícil de reutilizar y/o probar porque se deben incluir módulos dependientes.
+
+Ejemplos:
+- **A** tiene un atributo que se refiere a **B**
+- **A** llama a los servicios de un objeto **B**
+- **A** tiene un método que hace referencia a **B** (a través del tipo de retorno o parámentro)
+- **A** es una subclase de (o implementa) la clase **B**
+  
+> "Queremos diseñar componentes que sean autocontenidos, auto suficientes e independientes. Con un objetivo y un propósito bien definido"
+> -The pragmatic Programer
+
+## Cohesión
+- La cohesión se refiere a **lo que la clase (o módulo) puede hacer**
+- La baja cohesión significaría que la clase realiza una gran variedad de acciones:
+  - Es amplia
+  - No se enfoca en lo que debe hacer
+- Alta cohesión significa que la clase se enfoca en lo que debería estar haciendo, es decir, solo métodos relacionados con la intención de la clase.
+- 
