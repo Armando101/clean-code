@@ -306,3 +306,31 @@ const getPayAmount = ({
 - Simplifica las pruebas
 - Ayuda a centralizar procesos
 - Aplicar el principio DRY, usualmente lleva a refactorizar
+
+# Estructura recomendada de una clase
+> "El buen código parace estar escrito por alguien a quien le importa"
+> -Michael Feathers
+
+### Comenzar con lista de propiedades
+1. Propiedades estáticas
+2. Propiedades públicas de último
+   
+### Métodos
+1. Empezando por los constructores estáticos
+2. Constructor
+3. Métodos estáticos
+4. Métodos privados
+5. Métodos de instancia ordenados de mayor a menor importancia
+6. Getters y Setters al final
+
+# Comentarios
+Cuando necesites añadir comentarios a tu código quiere decir que no es lo suficientemente autoexplicativo.
+Evita usar comentarios pero...
+Cuando usamos librerías de terceros, APIS, frameworks, etc. Nos encontraremos ante situaciones en las que escribir un comentario será mejor que dejar una solución compleja o un hack sin explicación.
+Los comentarios deberían ser la excepción, no la regla
+
+Si vamos a escribir un comentario, escibamos el ¿Por qué? no el ¿Qué? ni el ¿Cómo?
+
+# Uniformidad en el proyecto
+Problemas similares, soluciones similares
+Este principio aplica tanto al código como a la organización de nuestras carpetas en el proyecto
