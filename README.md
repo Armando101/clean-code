@@ -383,4 +383,31 @@ Ejemplos:
   - Es amplia
   - No se enfoca en lo que debe hacer
 - Alta cohesión significa que la clase se enfoca en lo que debería estar haciendo, es decir, solo métodos relacionados con la intención de la clase.
-- 
+
+# Código no probable
+Código dificilmente testeable
+- Código con alto acoplamiento
+- Código con muchas dependencias no inyectadas
+- Dependencias en el conteto global (Tipo Singleton)
+
+> Debemos tener en menta las pruebas desde la creación del código
+
+## Optimizaciones prematuras
+Mantener abiertas las opciones retrasando la toma de decisiones nos permite darle mayor relevancia a lo que es más importante en una aplicación.
+No debemos anticiparnos a los requisitos y desarrollar abstracciones innecesarias que pueden añadir complejidad accidental
+
+### Complejidad accidental
+Cuando implementamos una solución compleja a la mínima indispensable
+### Complejidad escencial
+La complejidad es inherente al problema
+## Duplicidad de código
+No aplicar el principio DRY
+### Duplicidad Real
+- Código idéntico y cumple la misma función 
+- Un cambio implicaría actualizar todo el código en varios lugares
+- Incrementa posibilidades de error humano al olvidar una parte para actualizar
+- Mayor cantidad de pruebas innecesarias
+### Duplicidad Accidental
+- Código luce similar pero cumple funcionalidades distintas
+- Cuando hay un cambio, sólo hay que modificar un sólo lugar
+- Este tipo de duplicidad se puede trabajar con parámetros u optimizaciones
