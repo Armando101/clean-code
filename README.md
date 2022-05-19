@@ -465,3 +465,10 @@ Los principios SOLID nos indican cómo organizar nuestras funciones y estructura
 > Rober C. Martin
 
 Tener una única responsabilidad !== Hacer una única cosa
+
+## Detectar violaciones
+- Nombres de clases y módulos demasiado genéricos
+- Cambios en el código suelen afectar la clase o módulo
+- La clase involucra múltiples capas
+- Número elevado de importaciones
+- Cantidad elevada de método públicos
