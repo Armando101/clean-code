@@ -449,3 +449,19 @@ Es recomendable crear un medio de comunicación entre los dos módulos que se ne
 
 ## The middle man
 Es cuando una clase realiza sólo una acción y esa acción es delegarle el trabajo a otra clase.
+
+# Principios SOLID
+Los principios SOLID nos indican cómo organizar nuestras funciones y estructuras de datos en componentes y cómo dichos componentes deben estar interconectados.
+
+- **S**ingle responsibility: Responsabilidad única
+- **O**pen and close: Abierto y cerrado
+- **L**iskov Substitution: Sustitución de Liskov
+- **I**nterface segregation: Segregación de interfaz
+- **D**ependency inversion: Inversión de dependenicias.
+
+## Principio de responsabilidad única
+> "Nunca debería haber más de un motivo por es cual cambiar una clase o módulo"
+>
+> Rober C. Martin
+
+Tener una única responsabilidad !== Hacer una única cosa
