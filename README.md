@@ -334,3 +334,118 @@ Si vamos a escribir un comentario, escibamos el ¿Por qué? no el ¿Qué? ni el 
 # Uniformidad en el proyecto
 Problemas similares, soluciones similares
 Este principio aplica tanto al código como a la organización de nuestras carpetas en el proyecto
+
+# Stupid
+6 Code Smells que debemos evitar
+- **S**ingleton: patrón singleton
+- **T**ight Coupling: alto acoplamiento
+- **U**nestability: código no probable (unit test)
+- **P**remature optimization: optimizaciones prematuras
+- **I**ndescriptive Naming: nombres poco descriptivos
+- **D**uplication: duplicidad de código, no aplicar el principio DRY
+
+## Singleton
+### Pros
+- Garantiza una única instancia de la clase a lo largo de toda la aplicación
+
+### Const
+- Vive en el contexto global
+- Puede ser modificado por cualquiera y en cualquier momento
+- No es rastreable
+- Difícil de testear debido a su ubicación
+
+## Alto acoplamiento y baja cohesión
+Lo ideal es tener bajo acomplamiento y buena cohesión.
+## Acoplamiento
+- Se refiere a cuán relacionadas o dependientes son dos clases o módulos entre sí.
+- **Bajo acoplamiento**: cambiar algo importante en una clase no debería afectar a la otra.
+- **Alto acoplamiento**: dificulta el cambio y el mantenimiento de su código, dado que las clases están muy unidas, hacer un cambio podría requerir una renovación completa del sistema.
+  
+> Un buen diseño de software tiene alta cohesión y bajo acoplamiento
+
+### Contras de un alto acoplamiento
+- Un cambio en un módulo por lo general provoca un efecto dominó de los cambios en otros módulos
+- El ensamblaje de módulos puede requerir más esfuerzo y/o tiempo debido a la mayor dependencia ente módulos
+- Un módulo en particular puede ser más difícil de reutilizar y/o probar porque se deben incluir módulos dependientes.
+
+Ejemplos:
+- **A** tiene un atributo que se refiere a **B**
+- **A** llama a los servicios de un objeto **B**
+- **A** tiene un método que hace referencia a **B** (a través del tipo de retorno o parámentro)
+- **A** es una subclase de (o implementa) la clase **B**
+  
+> "Queremos diseñar componentes que sean autocontenidos, auto suficientes e independientes. Con un objetivo y un propósito bien definido"
+> -The pragmatic Programer
+
+## Cohesión
+- La cohesión se refiere a **lo que la clase (o módulo) puede hacer**
+- La baja cohesión significaría que la clase realiza una gran variedad de acciones:
+  - Es amplia
+  - No se enfoca en lo que debe hacer
+- Alta cohesión significa que la clase se enfoca en lo que debería estar haciendo, es decir, solo métodos relacionados con la intención de la clase.
+
+# Código no probable
+Código dificilmente testeable
+- Código con alto acoplamiento
+- Código con muchas dependencias no inyectadas
+- Dependencias en el conteto global (Tipo Singleton)
+
+> Debemos tener en menta las pruebas desde la creación del código
+
+## Optimizaciones prematuras
+Mantener abiertas las opciones retrasando la toma de decisiones nos permite darle mayor relevancia a lo que es más importante en una aplicación.
+No debemos anticiparnos a los requisitos y desarrollar abstracciones innecesarias que pueden añadir complejidad accidental
+
+### Complejidad accidental
+Cuando implementamos una solución compleja a la mínima indispensable
+### Complejidad escencial
+La complejidad es inherente al problema
+## Duplicidad de código
+No aplicar el principio DRY
+### Duplicidad Real
+- Código idéntico y cumple la misma función 
+- Un cambio implicaría actualizar todo el código en varios lugares
+- Incrementa posibilidades de error humano al olvidar una parte para actualizar
+- Mayor cantidad de pruebas innecesarias
+### Duplicidad Accidental
+- Código luce similar pero cumple funcionalidades distintas
+- Cuando hay un cambio, sólo hay que modificar un sólo lugar
+- Este tipo de duplicidad se puede trabajar con parámetros u optimizaciones
+
+## Inflación
+Cualquier método con un tamaño superior a 10 líneas debería ponernos a pensar en la existencia del mismo o en cómo hacerlo más pequeño.
+
+Podemos dividirlo en otros métodos y que cada método haga una cosa en específico.
+
+## Obsesión primitiva
+El uso de primitivos en lugar de objetos.
+Esto es cuando usamos tipos de dato primitivos como banderas o constantes.
+Esto es un code smell debido a que si nuestro programa empieza a crecer necesitaremos más banderas, mas constantes, etc. A la larga terminamos con muchas variables en lugar de clases u objetos que pueden ser más explicativos y ahorrarnos código.
+
+## Lista larga de parámetros
+No es recomendable tener más de 3 o 4 parámetros en una función.
+En lugar de esto es recomendable pasar un objecto como único argumento.
+
+# Acopladores
+Todos los olores de este grupo contribuyen al acoplamiento excesivo entre clases o muestran lo que sucede si el acoplamiento se reemplaza por una delegación excesiva.
+
+## Feature Envy
+Un método accede a los datos de otro objeto más que a sus propios datos, es decir cuando ocupamos.
+
+Es cuando una función, método o módulo hace referencia una función o método de otro módulo. Considerar esto y evaluar si realmente es necesario.
+
+Esto es, traer un gorila que tiene un plátano en la mano porque necesitamos el plátano.
+
+## Intimidad inapropiada
+Es cuando una clase o método usa métodos de otra clase.
+
+Las buenas clases deben saber lo menos posible de otras clases.
+
+Esto es un problema debido a que debemos asegurarnos que nuestro método compartido siga funcionando para todas las clases que lo ocupan, requiere mantenimiento de más y es difícil de escalar.
+
+## Cadenas de mensajes
+Cuando tenemos una función A que llama a B que llama a C.
+Es recomendable crear un medio de comunicación entre los dos módulos que se necesiten comunicar sin necesidad de intermediarios.
+
+## The middle man
+Es cuando una clase realiza sólo una acción y esa acción es delegarle el trabajo a otra clase.
