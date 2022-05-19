@@ -411,3 +411,41 @@ No aplicar el principio DRY
 - Código luce similar pero cumple funcionalidades distintas
 - Cuando hay un cambio, sólo hay que modificar un sólo lugar
 - Este tipo de duplicidad se puede trabajar con parámetros u optimizaciones
+
+## Inflación
+Cualquier método con un tamaño superior a 10 líneas debería ponernos a pensar en la existencia del mismo o en cómo hacerlo más pequeño.
+
+Podemos dividirlo en otros métodos y que cada método haga una cosa en específico.
+
+## Obsesión primitiva
+El uso de primitivos en lugar de objetos.
+Esto es cuando usamos tipos de dato primitivos como banderas o constantes.
+Esto es un code smell debido a que si nuestro programa empieza a crecer necesitaremos más banderas, mas constantes, etc. A la larga terminamos con muchas variables en lugar de clases u objetos que pueden ser más explicativos y ahorrarnos código.
+
+## Lista larga de parámetros
+No es recomendable tener más de 3 o 4 parámetros en una función.
+En lugar de esto es recomendable pasar un objecto como único argumento.
+
+# Acopladores
+Todos los olores de este grupo contribuyen al acoplamiento excesivo entre clases o muestran lo que sucede si el acoplamiento se reemplaza por una delegación excesiva.
+
+## Feature Envy
+Un método accede a los datos de otro objeto más que a sus propios datos, es decir cuando ocupamos.
+
+Es cuando una función, método o módulo hace referencia una función o método de otro módulo. Considerar esto y evaluar si realmente es necesario.
+
+Esto es, traer un gorila que tiene un plátano en la mano porque necesitamos el plátano.
+
+## Intimidad inapropiada
+Es cuando una clase o método usa métodos de otra clase.
+
+Las buenas clases deben saber lo menos posible de otras clases.
+
+Esto es un problema debido a que debemos asegurarnos que nuestro método compartido siga funcionando para todas las clases que lo ocupan, requiere mantenimiento de más y es difícil de escalar.
+
+## Cadenas de mensajes
+Cuando tenemos una función A que llama a B que llama a C.
+Es recomendable crear un medio de comunicación entre los dos módulos que se necesiten comunicar sin necesidad de intermediarios.
+
+## The middle man
+Es cuando una clase realiza sólo una acción y esa acción es delegarle el trabajo a otra clase.
