@@ -478,3 +478,7 @@ Es un principio que depende mucho del contexto
 Establece que las entidades de software (clases, módulos, métodos, etc.) deben estar abiertas para la extensión, pero cerradas para la modificación.
 
 El principio abierto-cerrado también se puede lograr de muchas otras maneras, incluso mediante el uso de la herencia o mediante patrones de diseño de composición como el patrón de estrategia
+
+### Detectar violaciones del OPC
+- Cambios normalmente afectan nuestra clase o módulo
+- Cuando una clase o módulo afecta muchas capas. (Presentación, almacenamiento, etc.)

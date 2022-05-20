@@ -1,29 +1,31 @@
-// Hay que agregar la dependencia de axios ```yarn add axios```
-import axios from "axios";
+import { HttpClient } from "./02-open.close-c";
 
 export class TodoService {
+  constructor(private http: HttpClient) {}
+  private url = "https://jsonplaceholder.typicode.com/todos/";
+
   async getTodoItems() {
-    const { data } = await axios.get(
-      "https://jsonplaceholder.typicode.com/todos/"
-    );
+    const { data } = await this.http.get(this.url);
     return data;
   }
 }
 
 export class PostService {
+  constructor(private http: HttpClient) {}
+  private url = "https://jsonplaceholder.typicode.com/posts";
+
   async getPosts() {
-    const { data } = await axios.get(
-      "https://jsonplaceholder.typicode.com/posts"
-    );
+    const { data } = await this.http.get(this.url);
     return data;
   }
 }
 
 export class PhotosService {
+  constructor(private http: HttpClient) {}
+  private url = "https://jsonplaceholder.typicode.com/photos";
+
   async getPhotos() {
-    const { data } = await axios.get(
-      "https://jsonplaceholder.typicode.com/photos"
-    );
+    const { data } = await this.http.get(this.url);
     return data;
   }
 }
