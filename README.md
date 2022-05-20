@@ -492,3 +492,7 @@ El principio abierto-cerrado también se puede lograr de muchas otras maneras, i
 ## Segregación de interfaz
 > "Los clientes no deberían estar oblicados a depender de interfacez que no utilicen"
 > -Robert C.Martin
+
+### Detectar violaciones ISP
+- Si las interfaces que diseñamos nos obligan a violar los principios de responsabilidad única y substitución de Liskov
+  
