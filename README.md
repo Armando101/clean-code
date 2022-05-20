@@ -466,9 +466,15 @@ Los principios SOLID nos indican cómo organizar nuestras funciones y estructura
 
 Tener una única responsabilidad !== Hacer una única cosa
 
-## Detectar violaciones
+### Detectar violaciones
 - Nombres de clases y módulos demasiado genéricos
 - Cambios en el código suelen afectar la clase o módulo
 - La clase involucra múltiples capas
 - Número elevado de importaciones
 - Cantidad elevada de método públicos
+
+## Principio de abierto y cerrrado
+Es un principio que depende mucho del contexto
+Establece que las entidades de software (clases, módulos, métodos, etc.) deben estar abiertas para la extensión, pero cerradas para la modificación.
+
+El principio abierto-cerrado también se puede lograr de muchas otras maneras, incluso mediante el uso de la herencia o mediante patrones de diseño de composición como el patrón de estrategia
