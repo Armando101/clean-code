@@ -485,6 +485,10 @@ El principio abierto-cerrado también se puede lograr de muchas otras maneras, i
   
 ## Liskov Subsitution
 > "Las funciones que utilicen punteros o referencias a clases base deben ser capaces de usar objetos de clases derivadas sin saberlo"
-> - Robert C.Martin
+> -Robert C.Martin
 
 > "Siendo U un subtipo de T, cualquier instancia de T debería poder ser sustituida por cualquier instancia de U sin alterar las propiedades del sistema"
+
+## Segregación de interfaz
+> "Los clientes no deberían estar oblicados a depender de interfacez que no utilicen"
+> -Robert C.Martin
