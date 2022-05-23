@@ -449,3 +449,77 @@ Es recomendable crear un medio de comunicación entre los dos módulos que se ne
 
 ## The middle man
 Es cuando una clase realiza sólo una acción y esa acción es delegarle el trabajo a otra clase.
+
+# Principios SOLID
+Los principios SOLID nos indican cómo organizar nuestras funciones y estructuras de datos en componentes y cómo dichos componentes deben estar interconectados.
+
+- **S**ingle responsibility: Responsabilidad única
+- **O**pen and close: Abierto y cerrado
+- **L**iskov Substitution: Sustitución de Liskov
+- **I**nterface segregation: Segregación de interfaz
+- **D**ependency inversion: Inversión de dependenicias.
+
+## Principio de responsabilidad única
+> "Nunca debería haber más de un motivo por es cual cambiar una clase o módulo"
+>
+> Rober C. Martin
+
+Tener una única responsabilidad !== Hacer una única cosa
+
+### Detectar violaciones
+- Nombres de clases y módulos demasiado genéricos
+- Cambios en el código suelen afectar la clase o módulo
+- La clase involucra múltiples capas
+- Número elevado de importaciones
+- Cantidad elevada de método públicos
+
+## Principio de abierto y cerrrado
+Es un principio que depende mucho del contexto
+Establece que las entidades de software (clases, módulos, métodos, etc.) deben estar abiertas para la extensión, pero cerradas para la modificación.
+
+El principio abierto-cerrado también se puede lograr de muchas otras maneras, incluso mediante el uso de la herencia o mediante patrones de diseño de composición como el patrón de estrategia
+
+### Detectar violaciones del OPC
+- Cambios normalmente afectan nuestra clase o módulo
+- Cuando una clase o módulo afecta muchas capas. (Presentación, almacenamiento, etc.)
+  
+## Liskov Subsitution
+> "Las funciones que utilicen punteros o referencias a clases base deben ser capaces de usar objetos de clases derivadas sin saberlo"
+> -Robert C.Martin
+
+> "Siendo U un subtipo de T, cualquier instancia de T debería poder ser sustituida por cualquier instancia de U sin alterar las propiedades del sistema"
+
+## Segregación de interfaz
+> "Los clientes no deberían estar oblicados a depender de interfacez que no utilicen"
+> -Robert C.Martin
+
+### Detectar violaciones ISP
+- Si las interfaces que diseñamos nos obligan a violar los principios de responsabilidad única y substitución de Liskov
+
+## Dependency inversion
+> "Los módulos de alto nivel no deben depender de los módulos de bajo nivel. Ambos deben depender de abstracciones. Las abstracciones no deben depender de concreciones. Los detalles deben depender de abstracciones" 
+> -Robert C. Martin
+
+- Los módulos de alto nivel no deberían depender de módulos de bajo nivel
+- Ambos deberían depender de abstracciones
+- Las abstracciones no deberían depender de detalles
+- Los detalles deberían depender de abstracciones
+
+Los componentes de bajo nivel son aquellos centrados en resolver el problema subyacente al negocio, es decir, la capa de dominio.
+
+Los de alto nivel son los que están próximos a la infraestructura, es decir, aquellos relacionados con la UI, la persistencia, la comunicación con API externas, etc.
+
+### Deoender de abstacciones
+Nos referimos a clases abstractas o interfaces.
+
+Uno de los motivos más importantes por el cual las reglas de negocio o capa de dominio deben depender de estas y no de concreciones es que aumenta su tolerancia al cambio.
+
+#### ¿Por qué obtenemos este beneficio?
+Cada cambio en un componente abstracto implica un cambio en su implementación.
+
+Por el contrario, los cambios en implementaciones concretas, la mayoría de veces, no requieren cambios en las interfaces que implementa.
+
+### Inyección de dependencias
+Dependencia en programación, significa que un módulo o componente require de otro para poder realizar su trabajo.
+
+En algún momento nuestro programa o aplicación llegará a estar formado por muchos módulos. Cuando esto pase, es cuando debemos usar inyección de dependencias.
